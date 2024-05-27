@@ -31,16 +31,10 @@ header {
 	background-color: black;
 }
 
-.page-header {
-    height: 50vh;	
-    background-size: cover;
-}
-
 #drinks {
 	padding: 1rem 0;
 	margin-bottom: 80px;
-	background-image: url('https://codeinstitute.s3-eu-west-1.amazonaws.com/CSSEssentials/coffee-beans.jpg');
-  background-size: cover;
+	background: url('https://codeinstitute.s3-eu-west-1.amazonaws.com/CSSEssentials/coffee-beans.jpg') center center / cover no-repeat fixed;
 }
 
 .text-white {
@@ -55,8 +49,13 @@ header {
     background-image: url('https://codeinstitute.s3-eu-west-1.amazonaws.com/CSSEssentials/coffeehouse.jpg');
 }
 
+.page-header {
+	height: 50vh;
+	background: center 75% / cover no-repeat;
+}
+
 .form-page-header {
-	background-image: url('https://codeinstitute.s3-eu-west-1.amazonaws.com/CSSEssentials/table.jpg');
+	background-image: url('https://codeinstitute.s3-eu-west-1.amazonaws.com/CSSEssentials/table.jpg')
 }
 
 .text-center {
@@ -109,14 +108,30 @@ img {
 
 #coffee-box {
 	background-color: brown;
+    position: relative;
+    left: 70px;
+    top: -15px;
 }
 
 #tea-box {
 	background-color: #6f4e37;
+	position: relative;
+	z-index: 1;
 }
 
 #cold-drinks-box {
 	background-color: chocolate;
+    position: relative;
+    right: 70px;
+    top: -15px;
+}
+
+.one-third-width-column {
+    width: 33.33%;
+}
+
+.two-thirds-width-column {
+    width: 66.66%;
 }
 
 .reasons-box {
@@ -125,11 +140,15 @@ img {
 	width: 100%;
 	margin: 2%;
 	background-color: chocolate;
+    position: relative;
+    left: 20%;
+    top: 30px;
 }
 
 .drinks-box {
 	width: 33%;
 	margin: 1rem 0;
+	display: inline-block;
 }
 
 /* padding to allow for fixed footer */
@@ -138,26 +157,12 @@ img {
 }
 
 .contact-boxes-container {
-    width: 66%;
-    margin: 0 auto;
+    height: 270px;
 }
 
-.contact-box-left {
-    width: 250px;
-    margin-top: -20px;
-}
-
-.contact-box-right {
-    width: 250px;
-    text-align: right;
-    margin-top: -20px;
-}
-
-.contact-box-center {
-    width: 250px;
+.contact-box {
+    flex: 0 250px;
     height: 250px;
-    margin: 0 auto;
-    text-align: center;
 }
 
 th,
@@ -182,6 +187,11 @@ footer {
 	background-color: #6f4e37;
 	padding: 1em;
 	text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+	z-index: 3;
 }
 
 footer > span {
@@ -242,6 +252,10 @@ form {
 	background-color: white;
 }
 
+.block-label {
+	display: block;
+}
+
 legend {
 	font-size: large;
 	font-weight: 600;
@@ -267,6 +281,7 @@ label {
     padding: 0.5rem;
     margin: 1.5rem 0 0 15px;
     border: 1px solid grey;
+    overflow: scroll;
 }
 
 /* map */
@@ -280,4 +295,30 @@ label {
     height: 100%;
     width: 100%;
     border: none;
+}
+
+/* FLEXBOX CLASSES */
+
+.flex {
+    display: flex;
+}
+
+.horizontal-center {
+    justify-content: center;
+}
+
+.vertical-center {
+    align-self: center;
+}
+
+.vertical-bottom {
+    align-self: flex-end;
+}
+
+.last {
+    order: 1;
+}
+
+.gap-20 {
+    gap: 20px;
 }
